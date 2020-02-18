@@ -1,0 +1,39 @@
+[
+  {
+    "name": "TEST: List all users",
+    "verb": "GET",
+    "endpoint": "api/v1/users",
+    "host": "http://localhost:8085/",
+    "headers": {
+      "Accept-Language": "en-US"
+    },
+    "query_string": {
+      "limit": 1
+    }
+  },
+  {
+    "name": "TEST: Add a new user",
+    "verb": "POST",
+    "endpoint": "api/v1/users",
+    "host": "http://localhost:8085/",
+    "payload": {
+      "username": "pyhttptest",
+      "email": "admin@pyhttptest.com"
+    }
+  },
+  {
+    "name": "TEST: Modify an existing user",
+    "verb": "PUT",
+    "endpoint": "api/v1/users/XeEsscGqweEttXsgY",
+    "host": "http://localhost:8085/",
+    "payload": {
+      "username": "pyhttptest"
+    }
+  },
+  {
+    "name": "TEST: Delete an existing user",
+    "verb": "DELETE",
+    "endpoint": "api/v1/users/XeEsscGqweEttXsgY",
+    "host": "http://localhost:8085/"
+  }
+]

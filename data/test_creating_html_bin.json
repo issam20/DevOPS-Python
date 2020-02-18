@@ -1,0 +1,9 @@
+{
+  "name": "TEST: Create an HTML bin",
+  "verb": "POST",
+  "endpoint": "post",
+  "host": "http://localhost:8080/",
+  "payload": {
+    "content": "Hello, world!"
+  }
+}
