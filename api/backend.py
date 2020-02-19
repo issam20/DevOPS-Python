@@ -9,9 +9,21 @@ import flask
 from flask import request, jsonify
 from flask import make_response
 from flask import abort
+import sys
+sys.path.append(r"C:\Users\tebib\Documents\DevOPS\DevOPS-Python\instance")
+from config import app_config
+
+def create_app(config_name):
+    app = flask.Flask(__name__, instance_relative_config=True)
+    app.config.from_object(app_config[config_name])
+    app.config.from_pyfile('config.py')
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    #db.init_app(app)
+
+    return app
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+#app.config["DEBUG"] = True
 
 # Create some test data for our catalog in the form of a list of dictionaries.
 users = [
